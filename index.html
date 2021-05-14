@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="multi-select.css" type="text/css" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="container">
+    <h5>Aaj khana mai kya?</h5>
+    <h1>Kuch bhi <span class="element"></span></h1>
+    <div class="home">
+      <div id="form">
+        <select id="categories">
+        </select>
+        <button onClick="handleSubmit()">submit</button>
+      </div>
+      <div id="image">
+        <img src="./svg/undraw_breakfast_psiw.svg" />
+      </div>
+    </div>
+    <div id="recipes">
+
+    </div>
+  </div>
+
+
+
+  <script src="./js/data.js"></script>
+  <script src="./js/typed.js"></script>
+
+  <!-- Multi-select script -->
+  <script src="./js/multi-select-ie11-polyfills.min.js" type="text/javascript"></script>
+  <script>
+    let arr = [];
+    var multiSelect = new IconicMultiSelect({
+      select: "#categories",
+      noData: "No food item found.",
+      noResults: "No results found in this list.",
+      placeholder: "Select a food item...",
+      data: [
+        { id: 1, item: "onion" },
+        { id: 2, item: "capsicum" },
+        { id: 3, item: "tomato" },
+        { id: 4, item: "sauce" },
+        { id: 5, item: "refined flour" },
+        { id: 6, item: "potato" },
+      ],
+      textField: "item",
+      valueField: "id",
+    });
+    multiSelect.init();
+    multiSelect.subscribe(function (e) {
+      arr = e.selection;
+    });
+  </script>
+
+  <script>
+    var typed = new Typed(".element", {
+      strings: ["Burger", "Noodles", "Capsicum curry"],
+      loop: true,
+      typeSpeed: 90,
+      backSpeed: 90,
+    });
+  </script>
+</body>
+
+</html>
