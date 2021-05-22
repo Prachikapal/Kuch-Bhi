@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Pacifico&display=swap');
 * {
   margin: 0;
   /* padding: 0; */
@@ -12,7 +15,8 @@ body {
 #container {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(rgb(194, 149, 66), rgb(136, 37, 37));
+  /* background: linear-gradient(rgb(194, 149, 66), rgb(136, 37, 37)); */
+  background-color: rgba(246, 111, 0, 0.198);
   padding: 20px;
   box-sizing: border-box;
 }
@@ -21,22 +25,29 @@ button {
   color: rgb(226, 250, 201);
   background-color: chocolate;
   width: 100px;
-  border-radius: 7px;
+  border-radius: 25px;
   margin-left: 10px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   cursor: pointer;
   border: 2px solid rgb(148, 76, 24);
 }
 
-/* h5 {
-  margin-bottom: -4%;
-} */
+h5 {
+  /* margin-bottom: -4%; */
+  font-family: 'Pattaya', sans-serif;
+  letter-spacing: 2px;
+}
 
 h1 {
-  color: rgb(167, 47, 97);
+  /* color: rgb(167, 47, 97); */
+  color:rgba(148, 76, 24, 0.87);
+  font-family: 'Pattaya', sans-serif;
+  letter-spacing: 2px;
 }
 span {
-  color: rgb(82, 82, 255);
+  color:chocolate;
+  /* font-family: 'Dancing Script', cursive; */
+  /* color: rgb(82, 82, 255); */
 }
 
 .home {

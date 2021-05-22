@@ -3,22 +3,22 @@ const recipe = [
     item: "noodles",
     ingredients: ["tomato", "capsicum", "onion", "sauce"],
     steps:
-      "Make the veggie patties as same as the size of the burger buns. Keep aside. If the mixture looks soft or crumbles, then do add some more breadcrumbs and mix everything again very well. Cover the veggie patties and set aside.",
+      "*Noodles recipe* Make the veggie patties as same as the size of the burger buns. Keep aside. If the mixture looks soft or crumbles, then do add some more breadcrumbs and mix everything again very well. Cover the veggie patties and set aside.",
   },
   {
     item: "burger",
     ingredients: ["potato", "tomato", "cabbage"],
-    steps: "Make the veggie patties as same as the size of the burger buns. Keep aside. If the mixture looks soft or crumbles, then do add some more breadcrumbs and mix everything again very well. Cover the veggie patties and set aside."
+    steps: "*Burger recipe* Make the veggie patties as same as the size of the burger buns. Keep aside. If the mixture looks soft or crumbles, then do add some more breadcrumbs and mix everything again very well. Cover the veggie patties and set aside."
   },
   {
     item: "Capsicum curry",
     ingredients: ["tomato", "onion", "capsicum"],
-    steps: "Make the veggie patties as same as the size of the burger buns. Keep aside. If the mixture looks soft or crumbles, then do add some more breadcrumbs and mix everything again very well. Cover the veggie patties and set aside."
+    steps: "*Capsicum curry* Make the veggie patties as same as the size of the burger buns. Keep aside. If the mixture looks soft or crumbles, then do add some more breadcrumbs and mix everything again very well. Cover the veggie patties and set aside."
   },
   {
     item: "patties",
     ingredients: ["refined flour", "onion", "potato"],
-    steps: "Mix maida, salt and 1 cup butter into a crumbly consistency.Roll dough into a long strip again, fold one third from one end towards center and then the other. Chill. And repeat twice more before using as required."
+    steps: "*Patties* Mix maida, salt and 1 cup butter into a crumbly consistency.Roll dough into a long strip again, fold one third from one end towards center and then the other. Chill. And repeat twice more before using as required."
   }
 ];
 
