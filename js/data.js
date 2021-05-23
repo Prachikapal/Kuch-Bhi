@@ -38,9 +38,11 @@ const checkCondition = (a, b = arr) => {
 const handleSubmit = (e) => {
   document.getElementById("image").style.display = "none";
   removeAllChild(document.getElementById("recipes"));
+  let count = 0;
   for (let i = 0; i < recipe.length; i++) {
     let flag = checkCondition(recipe[i].ingredients);
     if (flag == true) {
+      count++;
       console.log(recipe[i].item);
 
       // CARD
@@ -58,10 +60,10 @@ const handleSubmit = (e) => {
       cardTitle.appendChild(node);
 
       //CARD img Body
-      let cardImg= document.createElement("img");
-      cardImg.setAttribute("src","./svg/undraw_Hamburger_8ge6.svg");
+      let cardImg = document.createElement("img");
+      cardImg.setAttribute("src", "./svg/undraw_Hamburger_8ge6.svg");
       cardImg.classList.add("card-img-top");
-      
+
       // CARD TEXT
       let para = document.createElement("p");
       node = document.createTextNode(recipe[i].steps);
@@ -72,9 +74,12 @@ const handleSubmit = (e) => {
       cardBody.appendChild(para);
       card.appendChild(cardImg);
       card.appendChild(cardBody);
-      
+
       document.getElementById("recipes").appendChild(card);
     }
+  }
+  if (count === 0) {
+    document.getElementById("image").style.display = "block";
   }
 };
 
