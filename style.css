@@ -10,32 +10,37 @@ body {
   /* background: linear-gradient(rgb(194, 149, 66), rgb(136, 37, 37)); */
   /* background-size: auto; */
   font-size: 2rem;
+  background-color: rgba(246, 111, 0, 0.198);
+overflow-x: hidden;
 }
 
 #container {
   width: 100vw;
-  height: 100vh;
-  /* background: linear-gradient(rgb(194, 149, 66), rgb(136, 37, 37)); */
-  background-color: rgba(246, 111, 0, 0.198);
+  height:auto;
   padding: 20px;
   box-sizing: border-box;
 }
 
+/* Submit button */
 button {
   color: rgb(226, 250, 201);
   background-color: chocolate;
   width: 100px;
+  height:40px;
   border-radius: 25px;
   margin-left: 10px;
   letter-spacing: 2px;
   cursor: pointer;
   border: 2px solid rgb(148, 76, 24);
+  font-size: 19px;
+  outline-style: none;
 }
 
 h5 {
   /* margin-bottom: -4%; */
   font-family: 'Pattaya', sans-serif;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 h1 {
@@ -43,16 +48,18 @@ h1 {
   color:rgba(148, 76, 24, 0.87);
   font-family: 'Pattaya', sans-serif;
   letter-spacing: 2px;
+  text-align: center;
 }
-span {
+.element {
   color:chocolate;
-  /* font-family: 'Dancing Script', cursive; */
+  font-family: 'Dancing Script', cursive;
   /* color: rgb(82, 82, 255); */
 }
 
 .home {
   display: flex;
   display: -webkit-flex;
+  flex-direction: column;
   justify-content: space-between;
   padding-right: 4%;
   margin-top: 30px;
@@ -61,11 +68,14 @@ span {
 #form {
   display: flex;
   height: 50%;
+  margin:1px auto;
 }
 
 #image {
-  width: 20%;
-  height: 20%;
+  width: 33%;
+  height: 15%;
+  margin:2px auto;
+  margin-top: 5%;
 }
 
 #image > img {
@@ -76,16 +86,20 @@ span {
 /* CARD */
 
 #recipes {
+  width:100%;
+  margin-top:30px;
   display: flex;
   flex-wrap: wrap;
+  /* justify-content:space-between; */
+  justify-content: space-evenly;
 }
 .card {
-  width: 200px;
-  height: 200px;
-  padding: 7px;
-  border: 1px solid black;
-  border-radius: 20px;
+  width: 22rem;
+  z-index:-1;
+  /* margin:2px; */
+}
+
+.card-text{
   font-size: 1rem;
-  margin: 5px;
-  overflow-y: auto;
+  justify-content: left;
 }
