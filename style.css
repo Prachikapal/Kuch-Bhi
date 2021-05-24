@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Pacifico&display=swap");
 * {
   margin: 0;
-  /* padding: 0; */
+  padding: 0;
 }
 body {
   /* background: linear-gradient(rgb(194, 149, 66), rgb(136, 37, 37)); */
   /* background: linear-gradient(rgb(194, 149, 66), rgb(136, 37, 37)); */
   /* background-size: auto; */
-  font-size: 2rem;
+  /* font-size: 2rem; */
   background-color: rgba(246, 111, 0, 0.198);
-overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 #container {
   width: 100vw;
-  height:auto;
+  height: auto;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -26,33 +26,33 @@ button {
   color: rgb(226, 250, 201);
   background-color: chocolate;
   width: 100px;
-  height:40px;
+  height: 40px;
   border-radius: 25px;
   margin-left: 10px;
   letter-spacing: 2px;
   cursor: pointer;
   border: 2px solid rgb(148, 76, 24);
   font-size: 19px;
-  outline-style: none;
+  outline: none !important;
 }
 
 h5 {
   /* margin-bottom: -4%; */
-  font-family: 'Pattaya', sans-serif;
+  font-family: "Pattaya", sans-serif;
   letter-spacing: 2px;
   text-align: center;
 }
 
 h1 {
   /* color: rgb(167, 47, 97); */
-  color:rgba(148, 76, 24, 0.87);
-  font-family: 'Pattaya', sans-serif;
+  color: rgba(148, 76, 24, 0.87);
+  font-family: "Pattaya", sans-serif;
   letter-spacing: 2px;
   text-align: center;
 }
 .element {
-  color:chocolate;
-  font-family: 'Dancing Script', cursive;
+  color: chocolate;
+  font-family: "Dancing Script", cursive;
   /* color: rgb(82, 82, 255); */
 }
 
@@ -68,14 +68,14 @@ h1 {
 #form {
   display: flex;
   height: 50%;
-  margin:1px auto;
+  margin: 1px auto;
 }
 
 #image {
   width: 33%;
   height: 15%;
-  margin:2px auto;
-  margin-top: 5%;
+  margin: 0px auto;
+  margin-top: -80px;
 }
 
 #image > img {
@@ -86,8 +86,8 @@ h1 {
 /* CARD */
 
 #recipes {
-  width:100%;
-  margin-top:30px;
+  width: 100%;
+  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
   /* justify-content:space-between; */
@@ -95,11 +95,122 @@ h1 {
 }
 .card {
   width: 22rem;
-  z-index:-1;
-  /* margin:2px; */
+  z-index: -1;
+  margin-bottom: 2px;
 }
 
-.card-text{
+.card-text {
   font-size: 1rem;
   justify-content: left;
+}
+
+#form {
+  display: flex;
+  height: 50%;
+  margin: 1px auto;
+}
+
+/* DROPDOWN  */
+#select {
+  background-color: rgb(243 239 239);
+  width: 20rem;
+  height: 120px;
+  overflow-y: auto;
+  visibility: hidden;
+  margin-top: 1px;
+}
+
+#select > span {
+  display: block;
+  padding-left: 4px;
+}
+
+#select > span:hover {
+  background-color: rgb(193 189 189);
+}
+
+#select > span > label,
+#select > span > input:hover {
+  cursor: pointer;
+}
+
+#selectAll {
+  background-color: black;
+  color: white;
+}
+
+/* INPUT BOX */
+#inputBox {
+  min-height: 30px;
+  max-height: 63.977px;
+  margin: auto;
+  width: 20rem;
+  /* border: 1px 0px 10px 0px solid black; */
+  overflow-y: auto;
+  border-bottom: 2px solid black;
+
+  /* line-height: 40px; */
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  height: 5px;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: chocolate;
+
+  cursor: pointer !important;
+}
+
+#inputBox:hover {
+  cursor: text;
+}
+
+.placeholder {
+  color: gray;
+  text-indent: 0.4rem;
+  font-size: 1rem;
+
+  height: 100%;
+  margin-top: 6px;
+}
+
+.ingredient {
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  width: 90px;
+  height: 23px;
+  margin: 4px 5px;
+  display: inline-flex;
+  justify-content: space-between;
+  text-indent: 2px;
+  align-items: center;
+  padding: 2px 3px;
+}
+
+.ingredient > .close {
+  color: white;
+
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: text-top;
+  font-size: 1rem;
+}
+
+.close:hover {
+  cursor: pointer;
 }
