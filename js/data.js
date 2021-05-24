@@ -22,13 +22,43 @@ const recipe = [
   }
 ];
 
+// handle click
+document.getElementById("inputBox").addEventListener("click", (e) => {
+  document.getElementById("select").style.visibility = "visible";
+  e.stopPropagation()
+});
+
+document.getElementById("select").addEventListener("click", (e) => {
+  e.stopPropagation()
+});
+
+document.querySelector("body").addEventListener("click", (e) => {
+  document.getElementById("select").style.visibility = "hidden";
+});
+
+// delete an ingredient
+const removeIngredient = () => {
+  let close = document.getElementsByClassName("close");
+  for (let i = 0; i < close.length; i++) {
+    close[i].addEventListener("click", (e) => {
+      let a = arr[i];
+      document.getElementById(a).checked = false;
+      handleSubmit();
+      document.getElementById("all").checked = false;
+      e.stopPropagation()
+    })
+  }
+}
+
+// This array will store selected ingredients
+let arr = [];
+
 const checkCondition = (a, b = arr) => {
   if (a.length > b.length) {
     return false;
   }
-  let x = b.map(e => e.text)
   for (let i = 0; i < a.length; i++) {
-    if (!x.includes(a[i])) {
+    if (!b.includes(a[i])) {
       return false;
     }
   }
@@ -36,14 +66,15 @@ const checkCondition = (a, b = arr) => {
 };
 
 const handleSubmit = (e) => {
+  setInputBoxValue();
   document.getElementById("image").style.display = "none";
+
   removeAllChild(document.getElementById("recipes"));
   let count = 0;
   for (let i = 0; i < recipe.length; i++) {
     let flag = checkCondition(recipe[i].ingredients);
     if (flag == true) {
       count++;
-      console.log(recipe[i].item);
 
       // CARD
       let card = document.createElement("div");
@@ -81,10 +112,61 @@ const handleSubmit = (e) => {
   if (count === 0) {
     document.getElementById("image").style.display = "block";
   }
+  removeIngredient();
 };
 
+// Print values in input box
+const setInputBoxValue = () => {
+  removeAllChild(document.getElementById("inputBox"));
+  arr = [];
+  let searchedItems = document.getElementsByClassName("checkbox");
+  for (let i = 0; i < searchedItems.length; i++) {
+    if (searchedItems[i].checked) {
+      arr.push(searchedItems[i].id)
+    }
+  }
+  for (let i = 0; i < arr.length; i++) {
+    let node = document.createTextNode(arr[i]);
+    let para = document.createElement("span");
+    para.classList.add("ingredient")
+    para.appendChild(node);
+
+    let close = document.createElement("span");
+    close.classList.add("close");
+    node = document.createTextNode("x");
+    close.appendChild(node);
+    para.appendChild(close);
+
+    document.getElementById("inputBox").appendChild(para)
+  }
+  return;
+}
+
+
+// Empty input box
 const removeAllChild = (parent) => {
   while (parent.firstChild) {
     parent.removeChild(parent.firstChild);
   }
+  return;
 }
+
+
+
+
+
+// select all ingredients
+const selectAll = () => {
+  let searchedItems = document.getElementsByClassName("checkbox");
+  if (document.getElementById("all").checked) {
+    for (let i = 0; i < searchedItems.length; i++) {
+      searchedItems[i].checked = true;
+    }
+  }
+  else {
+    for (let i = 0; i < searchedItems.length; i++) {
+      searchedItems[i].checked = false;
+    }
+  }
+}
+
